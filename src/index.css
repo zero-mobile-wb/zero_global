@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', system-ui, sans-serif;
+
+  /* Brand */
+  --color-zg-bg: #060912;
+  --color-zg-surface: rgba(255, 255, 255, 0.04);
+  --color-zg-card: rgba(255, 255, 255, 0.06);
+  --color-zg-border: rgba(255, 255, 255, 0.08);
+  --color-zg-border-strong: rgba(255, 255, 255, 0.16);
+
+  --color-zg-blue: #2F80ED;
+  --color-zg-cyan: #56CCF2;
+  --color-zg-green: #27AE60;
+  --color-zg-gold: #F2C94C;
+  --color-zg-red: #EB5757;
+  --color-zg-purple: #9B51E0;
+
+  --color-zg-text: rgba(255, 255, 255, 0.95);
+  --color-zg-muted: rgba(255, 255, 255, 0.55);
+  --color-zg-faint: rgba(255, 255, 255, 0.30);
+
+  --radius-card: 1.25rem;
+}
+
+/* ── Global resets ──────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: #F9FAFB;
+  color: #111827;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Wallet adapter overrides ──────────────────────────────── */
+
+/* Connect button in nav */
+.wallet-adapter-button {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  letter-spacing: 0.01em !important;
+  height: 40px !important;
+  padding: 0 1.1rem !important;
+  border-radius: 10px !important;
+  background: #111111 !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  transition: background 0.18s ease, transform 0.15s ease, box-shadow 0.18s ease !important;
+}
+
+.wallet-adapter-button:hover:not([disabled]) {
+  background: #333333 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
+  transform: translateY(-1px) !important;
+}
+
+.wallet-adapter-button:active:not([disabled]) {
+  transform: translateY(0px) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* When wallet is connected — subtle light variant */
+.wallet-adapter-button-trigger {
+  background: #f4f4f4 !important;
+  color: #111111 !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: none !important;
+}
+
+.wallet-adapter-button-trigger:hover:not([disabled]) {
+  background: #ebebeb !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Modal */
+.wallet-adapter-modal-wrapper {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.14) !important;
+  color: #111111 !important;
+}
+
+.wallet-adapter-modal-title {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  color: #111111 !important;
+}
+
+.wallet-adapter-modal-list li {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  margin-bottom: 6px !important;
+  border-radius: 10px !important;
+  transition: background 0.15s ease !important;
+}
+
+.wallet-adapter-modal-list li:last-child {
+  margin-bottom: 0 !important;
+}
+
+.wallet-adapter-modal-list li button {
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+}
+
+.wallet-adapter-modal-list li button:hover {
+  background: #f4f4f4 !important;
+}
+
+.wallet-adapter-modal-list-more {
+  color: #555555 !important;
+}
+
+.wallet-adapter-collapse-btn {
+  font-family: 'Outfit', system-ui, sans-serif !important;
+  color: #555555 !important;
+}
+
+
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 3px;
+}
+
+/* ── Spinner ────────────────────────────────────────────────── */
+.spin {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Pulse dot ──────────────────────────────────────────────── */
+.dot-pulse {
+  animation: dotpulse 2s ease-in-out infinite;
+}
+
+@keyframes dotpulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* ── Toast slide-in ─────────────────────────────────────────── */
+.toast-enter {
+  animation: toastIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
