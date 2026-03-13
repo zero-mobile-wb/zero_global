@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import type { CompanyAccountData } from "../hooks/useZeroGlobal";
 import { formatUsdc } from "../utils/formatters";
-import { ArrowRight, CheckCircle2, ChevronLeft, ShieldCheck, Wallet, Download } from "lucide-react";
+import { ArrowRight, CheckCircle2, ChevronLeft, ShieldCheck, Download } from "lucide-react";
 
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletButton } from "./WalletButton";
