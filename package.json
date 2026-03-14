@@ -22,12 +22,15 @@
     "@types/three": "^0.183.1",
     "buffer": "^6.0.3",
     "lucide-react": "^0.577.0",
+    "process": "^0.11.10",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "recharts": "^3.8.0",
     "stream-browserify": "^3.0.0",
     "tailwindcss": "^4.2.1",
-    "three": "^0.183.2"
+    "three": "^0.183.2",
+    "util": "^0.12.5",
+    "vite-plugin-node-polyfills": "^0.25.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
