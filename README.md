@@ -1,73 +1,42 @@
-# React + TypeScript + Vite
+# Zero Global
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Zero Global is a cross-border stablecoin treasury infrastructure that enables businesses to manage and move capital globally using **self-custody wallets**.
 
-Currently, two official plugins are available:
+Built on **Solana**, Zero Global allows companies to hold and transfer **USDC** instantly while maintaining full control of their funds. The system removes the complexity of traditional banking by enabling fast, transparent, and programmable financial operations on-chain.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
 
-## React Compiler
+### Treasury Vault
+A primary vault where companies store and manage their USDC reserves.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Sub-Accounts
+Businesses can create **sub-accounts** from their main treasury vault to allocate funds for different activities such as payments, treasury operations, or financial strategies.
 
-## Expanding the ESLint configuration
+### Cross-Border Payments
+Send USDC globally with near-instant settlement and low fees.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### DeFi Integration
+Sub-accounts can be used to interact with external protocols such as vault strategies and trading platforms.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Architecture
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+Main Treasury Vault
+        ↓
+    Sub Accounts
+        ↓
+Payments / Strategies / Operations
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This structure allows companies to organize capital efficiently while isolating risk across different financial activities.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Vision
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Zero Global aims to build the infrastructure for **borderless business finance**, where companies can store, move, and deploy capital globally using self-custody stablecoin treasuries.
+
+## Built With
+
+- Solana
+- Anchor Framework
+- SPL Token Program
+- USDC
